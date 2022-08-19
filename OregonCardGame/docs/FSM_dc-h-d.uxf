@@ -1,0 +1,36 @@
+<diagram program="umletino" version="15.0.0"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>240</x><y>170</y><w>80</w><h>60</h></coordinates><panel_attributes>DC - E
+H - E
+D - NE</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>220</x><y>30</y><w>120</w><h>100</h></coordinates><panel_attributes>Start Game</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>270</x><y>120</y><w>30</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;50;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>230</x><y>270</y><w>100</w><h>60</h></coordinates><panel_attributes>DC - NE
+H - E
+D - NE</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>310</x><y>170</y><w>140</w><h>40</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+Draw</panel_attributes><additional_attributes>120;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>430</x><y>170</y><w>100</w><h>30</h></coordinates><panel_attributes>Deck empty?</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>270</x><y>190</y><w>210</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+No</panel_attributes><additional_attributes>10;80;190;10</additional_attributes></element><element><id>Relation</id><coordinates><x>480</x><y>190</y><w>80</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+Yes</panel_attributes><additional_attributes>60;80;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>540</x><y>270</y><w>60</w><h>60</h></coordinates><panel_attributes>DC - NE
+H - E
+D - E</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>560</x><y>320</y><w>130</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+Add card to hand</panel_attributes><additional_attributes>10;60;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>530</x><y>380</y><w>80</w><h>60</h></coordinates><panel_attributes>DC - E
+H - NE
+D - E</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>560</x><y>430</y><w>150</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+Calculate hand score</panel_attributes><additional_attributes>10;80;10;10</additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>510</x><y>510</y><w>120</w><h>100</h></coordinates><panel_attributes>End Game</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>270</x><y>320</y><w>130</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+Add card to hand</panel_attributes><additional_attributes>10;60;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>220</x><y>380</y><w>140</w><h>60</h></coordinates><panel_attributes>DC - E
+H - NE
+D - NE</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>280</x><y>430</y><w>90</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+Draw card</panel_attributes><additional_attributes>10;70;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>240</x><y>500</y><w>100</w><h>30</h></coordinates><panel_attributes>Deck empty?</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>290</x><y>520</y><w>50</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+Yes</panel_attributes><additional_attributes>10;60;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>170</x><y>500</y><w>90</w><h>40</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+No</panel_attributes><additional_attributes>10;20;70;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>230</x><y>580</y><w>140</w><h>60</h></coordinates><panel_attributes>DC - NE
+H - NE
+D - E</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>40</x><y>500</y><w>140</w><h>60</h></coordinates><panel_attributes>DC - NE
+H - NE
+D - NE</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>350</x><y>30</y><w>160</w><h>110</h></coordinates><panel_attributes>DC = drawn card
+H = Hand
+D = deck
+
+E = empty
+NE = not empty
+
+bg=yellow</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>360</x><y>290</y><w>200</w><h>340</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+Start new hand</panel_attributes><additional_attributes>180;10;50;10;50;320;10;320</additional_attributes></element><element><id>Relation</id><coordinates><x>360</x><y>420</y><w>190</w><h>230</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+Add card 
+to hand</panel_attributes><additional_attributes>170;10;80;10;80;210;10;210</additional_attributes></element><element><id>Relation</id><coordinates><x>70</x><y>390</y><w>170</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+Add card to hand</panel_attributes><additional_attributes>150;20;50;20;50;110</additional_attributes></element><element><id>Relation</id><coordinates><x>50</x><y>280</y><w>200</w><h>240</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+Start new hand</panel_attributes><additional_attributes>180;10;10;10;10;220</additional_attributes></element></diagram>

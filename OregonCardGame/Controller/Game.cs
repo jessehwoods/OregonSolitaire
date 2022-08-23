@@ -3,15 +3,17 @@
 namespace OregonCardGame.Controller
 {
 
-    /*
-     * This is the model of the game. It functions as the controller for the game objects and takes
-     * input from any interface being used.
-     */
+    /// <summary>
+    /// This is the the controller for the game objects. It takes input from any interface being used, and handles the game state.
+    /// </summary>
     public class Game
     {
         /// <summary>
-        /// Used to check if the game is complete.
+        /// Used to check if the game is ended or is still going on.
         /// </summary>
+        /// <remarks>
+        /// Most functions of the game will stop working when it ends to avoid undefined behavior.
+        /// </remarks>
         public bool GameOver { get; private set; }
 
         /// <summary>

@@ -1,8 +1,8 @@
 namespace OregonCardGameWindowsApp
 {
-    public partial class GamePanel : Form
+    public partial class GameScreen : Form
     {
-        public GamePanel()
+        public GameScreen()
         {
             InitializeComponent();
         }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace OregonCardGameWindowsApp
 {
-    public partial class GameInstructions : Form
+    public partial class InstructionsScreen : Form
     {
-        public GameInstructions()
+        public InstructionsScreen()
         {
             InitializeComponent();
         }

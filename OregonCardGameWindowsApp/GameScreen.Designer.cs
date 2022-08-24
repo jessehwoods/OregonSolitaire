@@ -35,7 +35,7 @@
             this.layoutIndex3 = new System.Windows.Forms.PictureBox();
             this.layoutIndex2 = new System.Windows.Forms.PictureBox();
             this.layoutIndex1 = new System.Windows.Forms.PictureBox();
-            this.layoutIndex0 = new System.Windows.Forms.PictureBox();
+            this.laoutIndex0 = new System.Windows.Forms.PictureBox();
             this.labelLayoutScore = new System.Windows.Forms.Label();
             this.labelTotalScore = new System.Windows.Forms.Label();
             this.buttonStartNewLayout = new System.Windows.Forms.Button();
@@ -46,7 +46,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutIndex3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutIndex2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutIndex1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutIndex0)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.laoutIndex0)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -63,7 +63,7 @@
             this.tableLayoutPanel1.Controls.Add(this.layoutIndex3, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.layoutIndex2, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.layoutIndex1, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.layoutIndex0, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.laoutIndex0, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(146, 37);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
@@ -81,7 +81,6 @@
             this.deckBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.deckBox.TabIndex = 7;
             this.deckBox.TabStop = false;
-            this.deckBox.Click += new System.EventHandler(this.deckBox_Click);
             // 
             // drawnCardBox
             // 
@@ -92,7 +91,6 @@
             this.drawnCardBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.drawnCardBox.TabIndex = 6;
             this.drawnCardBox.TabStop = false;
-            this.drawnCardBox.Click += new System.EventHandler(this.drawnCardBox_Click);
             // 
             // layoutIndex4
             // 
@@ -103,7 +101,6 @@
             this.layoutIndex4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.layoutIndex4.TabIndex = 5;
             this.layoutIndex4.TabStop = false;
-            this.layoutIndex4.Click += new System.EventHandler(this.layoutIndex4_Click);
             // 
             // layoutIndex3
             // 
@@ -114,7 +111,6 @@
             this.layoutIndex3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.layoutIndex3.TabIndex = 4;
             this.layoutIndex3.TabStop = false;
-            this.layoutIndex3.Click += new System.EventHandler(this.layoutIndex3_Click);
             // 
             // layoutIndex2
             // 
@@ -135,18 +131,16 @@
             this.layoutIndex1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.layoutIndex1.TabIndex = 2;
             this.layoutIndex1.TabStop = false;
-            this.layoutIndex1.Click += new System.EventHandler(this.layoutIndex1_Click);
             // 
-            // layoutIndex0
+            // laoutIndex0
             // 
-            this.layoutIndex0.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutIndex0.Location = new System.Drawing.Point(3, 3);
-            this.layoutIndex0.Name = "layoutIndex0";
-            this.layoutIndex0.Size = new System.Drawing.Size(94, 94);
-            this.layoutIndex0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.layoutIndex0.TabIndex = 1;
-            this.layoutIndex0.TabStop = false;
-            this.layoutIndex0.Click += new System.EventHandler(this.layoutIndex0_Click);
+            this.laoutIndex0.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.laoutIndex0.Location = new System.Drawing.Point(3, 3);
+            this.laoutIndex0.Name = "laoutIndex0";
+            this.laoutIndex0.Size = new System.Drawing.Size(94, 94);
+            this.laoutIndex0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.laoutIndex0.TabIndex = 1;
+            this.laoutIndex0.TabStop = false;
             // 
             // labelLayoutScore
             // 
@@ -178,9 +172,8 @@
             this.buttonStartNewLayout.TabIndex = 3;
             this.buttonStartNewLayout.Text = "Start New Layout";
             this.buttonStartNewLayout.UseVisualStyleBackColor = true;
-            this.buttonStartNewLayout.Click += new System.EventHandler(this.buttonStartNewLayout_Click);
             // 
-            // GameScreen
+            // GamePanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -190,7 +183,7 @@
             this.Controls.Add(this.labelTotalScore);
             this.Controls.Add(this.labelLayoutScore);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "GameScreen";
+            this.Name = "GamePanel";
             this.Text = "Form1";
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.deckBox)).EndInit();
@@ -199,7 +192,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutIndex3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutIndex2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutIndex1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutIndex0)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.laoutIndex0)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,7 +206,7 @@
         private PictureBox layoutIndex3;
         private PictureBox layoutIndex2;
         private PictureBox layoutIndex1;
-        private PictureBox layoutIndex0;
+        private PictureBox laoutIndex0;
         private PictureBox deckBox;
         private Label labelLayoutScore;
         private Label labelTotalScore;

@@ -1,6 +1,6 @@
 ﻿namespace OregonCardGameWindowsApp
 {
-    partial class InstructionsScreen
+    partial class GameInstructions
     {
         /// <summary>
         /// Required designer variable.

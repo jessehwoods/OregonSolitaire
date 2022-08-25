@@ -59,7 +59,7 @@ namespace OregonCardGameWindowsApp
             RulesScreen rulesScreen = new RulesScreen() { TopLevel = false, TopMost = true };
             panelMain.Controls.Add(rulesScreen);
             rulesScreen.FormBorderStyle = FormBorderStyle.None;
-            // Watch for game being completed
+            // Watch for user to be done.
             rulesScreen.StartButtonClicked += GoToStartScreen;
             rulesScreen.Show();
         }

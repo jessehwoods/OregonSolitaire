@@ -420,6 +420,15 @@ namespace OregonCardGameWindowsApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string rules_text {
+            get {
+                return ResourceManager.GetString("rules_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap seven_clubs {

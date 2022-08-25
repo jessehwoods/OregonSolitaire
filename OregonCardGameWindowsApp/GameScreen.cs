@@ -5,6 +5,11 @@ namespace OregonCardGameWindowsApp
     public partial class GameScreen : Form
     {
         /// <summary>
+        /// Event handler used to notify delegates when the game is done.
+        /// </summary>
+        public EventHandler GameCompleted;
+
+        /// <summary>
         /// Holds the Game object that handles the game rules.
         /// </summary>
         private Game game;
@@ -18,7 +23,7 @@ namespace OregonCardGameWindowsApp
         {
             InitializeComponent();
             game = new Game();
-            layoutCards = new List<PictureBox> {layoutIndex0, layoutIndex1, layoutIndex2, layoutIndex3, layoutIndex4};
+            layoutCards = new List<PictureBox> { layoutIndex0, layoutIndex1, layoutIndex2, layoutIndex3, layoutIndex4 };
             deckBox.Image = Properties.Resources.cardback;
             UpdateGameScreen();
         }
@@ -111,6 +116,32 @@ namespace OregonCardGameWindowsApp
             }
         }
 
+        /// <summary>
+        /// Helper class to get card pictures from the resources file.
+        /// </summary>
+        /// <param name="rank">
+        /// Rank of the card
+        /// </param>
+        /// <param name="suit">
+        /// Suit of the card.
+        /// </param>
+        /// <returns>
+        /// The image for the card from the resources file.
+        /// </returns>
+        private Bitmap GetCardPicture(string rank, string suit)
+        {
+            Bitmap bitmap = null;
+            bitmap = (Bitmap)Properties.Resources.ResourceManager.GetObject(rank.ToLower() + "_" + suit.ToLower());
+            if (bitmap == null)
+            {
+                bitmap = (Bitmap)Properties.Resources.ResourceManager.GetObject("error");
+            }
+            return bitmap;
+        }
+
+        /// <summary>
+        /// Ends the game and gets rid of functionality.
+        /// </summary>
         private void EndGame()
         {
             foreach (PictureBox pb in layoutCards)
@@ -121,18 +152,17 @@ namespace OregonCardGameWindowsApp
             drawnCardBox.Image = null;
             labelLayoutScore.Text = null;
             labelTotalScore.Text = Properties.Resources.TotalScore + game.Score;
+
         }
 
-        private Bitmap GetCardPicture(string rank, string suit)
+        /// <summary>
+        /// Custom event that notifies delegates the game is completed and they can go back to something else.
+        /// </summary>
+        private void buttonToStart_Click(object sender, EventArgs e)
         {
-            Bitmap bitmap = null;
-            bitmap = (Bitmap) Properties.Resources.ResourceManager.GetObject(rank.ToLower() + "_" + suit.ToLower());
-            if (bitmap == null)
-            {
-                bitmap = (Bitmap) Properties.Resources.ResourceManager.GetObject("error");
-            }
-            return bitmap;
+            EventHandler handler = GameCompleted;
+            handler?.Invoke(this, e);
+            this.Close();
         }
-
     }
 }

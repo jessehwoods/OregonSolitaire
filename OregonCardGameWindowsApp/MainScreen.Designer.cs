@@ -28,30 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelMain = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // panel1
+            // panelMain
             // 
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(816, 371);
-            this.panel1.TabIndex = 0;
+            this.panelMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelMain.Location = new System.Drawing.Point(0, 0);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(842, 394);
+            this.panelMain.TabIndex = 0;
             // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(842, 394);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelMain);
             this.Name = "MainScreen";
-            this.Text = "Form1";
+            this.Text = "Oregon Solitaire";
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Panel panel1;
+        private Panel panelMain;
     }
 }

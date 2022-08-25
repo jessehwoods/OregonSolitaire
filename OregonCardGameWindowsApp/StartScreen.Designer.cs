@@ -56,7 +56,9 @@
             // 
             // pictureBoxTitle
             // 
-            this.pictureBoxTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureBoxTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxTitle.Image = global::OregonCardGameWindowsApp.Properties.Resources.title_screen;
             this.pictureBoxTitle.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxTitle.Name = "pictureBoxTitle";
@@ -68,12 +70,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 332);
             this.Controls.Add(this.pictureBoxTitle);
             this.Controls.Add(this.buttonRules);
             this.Controls.Add(this.buttonStart);
             this.Name = "StartScreen";
-            this.Text = "Form1";
+            this.Text = "Oregon Solitaire Start";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTitle)).EndInit();
             this.ResumeLayout(false);
 

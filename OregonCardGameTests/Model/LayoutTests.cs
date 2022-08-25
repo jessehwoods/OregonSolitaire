@@ -73,6 +73,13 @@ namespace OregonCardGameTests.Model
             Assert.AreEqual(ScoreCalculator.StraightFlush, testHand.Score);
             Assert.IsTrue(testHand.Full);
 
+            // Replace each of the indexes
+            for (int i = 0; i < Layout.MaximumLayoutSize; i++)
+            {
+                testHand.PlaceCard(i, c2);
+            }
+            Assert.AreEqual(c2.ToString() + "," + c2.ToString() + "," + c2.ToString() + "," + c2.ToString() + "," + c2.ToString(), testHand.ToString());
+            Assert.IsTrue(testHand.Full);
         }
     }
 }

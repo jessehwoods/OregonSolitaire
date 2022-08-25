@@ -53,7 +53,7 @@ namespace OregonCardGame.Controller
         /// <summary>
         /// Gives the highest index that can have a card legally placed in it.
         /// </summary>
-        public int HighestAvailableIndex => AvailableIndexes();
+        public int HighestAvailableIndex => layout.AvailableIndexes();
 
         /// <summary>
         /// Card that has been taken from deck, but not played to layout yet.
@@ -129,7 +129,7 @@ namespace OregonCardGame.Controller
             }
             if (idx < 0 || idx > HighestAvailableIndex)
             {
-                throw new ArgumentException("Attempting to place a card outside allowed ranged of indexes.");
+                throw new ArgumentException("Game is attempting to place a card outside allowed ranged of indexes.");
             }
             layout.PlaceCard(idx, DrawnCard);
             DrawCard();
@@ -158,24 +158,6 @@ namespace OregonCardGame.Controller
         {
             Score += layout.Score;
             GameOver = true;
-        }
-
-        /// <summary>
-        /// Gives a number indicating what indexes can have cards placed in them by giving the highest number.
-        /// </summary>
-        /// <remarks>
-        /// Any lower indexes (starting at 0) can also have cards placed in them.
-        /// </remarks>
-        /// <returns>
-        /// The highest index that can be played in.
-        /// </returns>
-        private int AvailableIndexes()
-        {
-            if (layout.LayoutCount < Layout.MaximumLayoutSize)
-            {
-                return layout.LayoutCount;
-            }
-            return Layout.MaximumLayoutSize;
         }
     }
 }

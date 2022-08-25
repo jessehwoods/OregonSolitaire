@@ -25,32 +25,41 @@ namespace OregonCardGameWindowsApp
 
         private void layoutIndex0_Click(object sender, EventArgs e)
         {
-            labelLayoutScore.Text = "1";
+            PlaceCard(0);
         }
+
+
 
         private void layoutIndex1_Click(object sender, EventArgs e)
         {
-            labelLayoutScore.Text = "1";
+            PlaceCard(1);
         }
 
         private void layoutIndex2_Click(object sender, EventArgs e)
         {
-            labelLayoutScore.Text = "2";
+            PlaceCard(2);
         }
 
         private void layoutIndex3_Click(object sender, EventArgs e)
         {
-            labelLayoutScore.Text = "3";
+            PlaceCard(3);
         }
 
         private void layoutIndex4_Click(object sender, EventArgs e)
         {
-            labelLayoutScore.Text = "4";
+            PlaceCard(4);
         }
 
         private void buttonStartNewLayout_Click(object sender, EventArgs e)
         {
-            labelLayoutScore.Text = "new";
+            game.StartNewLayout();
+            UpdateGameScreen();
+        }
+
+        private void PlaceCard(int v)
+        {
+            game.PlaceCard(v);
+            UpdateGameScreen();
         }
 
         /// <summary>
@@ -64,8 +73,17 @@ namespace OregonCardGameWindowsApp
                 // Finish game
                 EndGame();
             }
+            //Clear the cards in the layout
+            foreach (PictureBox pb in layoutCards)
+            {
+                pb.Image = null;
+            }
             // Get the cards in the layout and get the pictures of them
             string[] cardsInLayout = game.CardsInLayout.Split(',');
+            for(int i = 0; i <= game.HighestAvailableIndex; i++)
+            {
+                layoutCards[i].Image = Properties.Resources.ace_clubs;
+            }
             // Get the drawn card
             var availableCardStringArray = game.AvailableCard.Split();
             drawnCardBox.Image = Properties.Resources.empty_ready;

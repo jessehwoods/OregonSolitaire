@@ -134,5 +134,23 @@ namespace OregonCardGame.Model
                 ReplaceCard(idx, card);
             }
         }
+
+        /// <summary>
+        /// Gives a number indicating what indexes can have cards placed in them by giving the highest number.
+        /// </summary>
+        /// <remarks>
+        /// Any lower indexes (starting at 0) can also have cards placed in them.
+        /// </remarks>
+        /// <returns>
+        /// The highest index that can be played in.
+        /// </returns>
+        private int AvailableIndexes()
+        {
+            if (LayoutCount < Layout.MaximumLayoutSize)
+            {
+                return LayoutCount;
+            }
+            return Layout.MaximumLayoutSize - 1;
+        }
     }
 }

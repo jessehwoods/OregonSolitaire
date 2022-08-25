@@ -114,7 +114,7 @@ namespace OregonCardGame.Controller
         /// <exception cref="InvalidOperationException">
         /// Thrown if the DrawnCard is null.
         /// </exception>
-        /// <exception cref="IndexOutOfRangeException">
+        /// <exception cref="ArgumentException">
         /// Thrown if the index is outside of the current hand size + 1 or over maximum hand size.
         /// </exception>
         public void PlaceCard(int idx)
@@ -127,18 +127,11 @@ namespace OregonCardGame.Controller
             {
                 throw new InvalidOperationException("Cannot place a card in Layout with no drawn card.");
             }
-            if (idx > layout.LayoutCount || idx >= Layout.MaximumLayoutSize)
+            if (idx < 0 || idx > HighestAvailableIndex)
             {
-                throw new IndexOutOfRangeException("Trying to add card to an invalid index in layout");
+                throw new ArgumentException("Attempting to place a card outside allowed ranged of indexes.");
             }
-            if (idx == layout.LayoutCount)
-            {
-                layout.FillLayout(DrawnCard);
-            }
-            else
-            {
-                layout.ReplaceCard(idx, DrawnCard);
-            }
+            layout.PlaceCard(idx, DrawnCard);
             DrawCard();
         }
 

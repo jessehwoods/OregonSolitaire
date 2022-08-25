@@ -19,6 +19,7 @@ namespace OregonCardGameWindowsApp
             InitializeComponent();
             game = new Game();
             layoutCards = new List<PictureBox> {layoutIndex0, layoutIndex1, layoutIndex2, layoutIndex3, layoutIndex4};
+            deckBox.Image = Properties.Resources.cardback;
             UpdateGameScreen();
         }
 
@@ -66,7 +67,8 @@ namespace OregonCardGameWindowsApp
             // Get the cards in the layout and get the pictures of them
             string[] cardsInLayout = game.CardsInLayout.Split(',');
             // Get the drawn card
-
+            var availableCardStringArray = game.AvailableCard.Split();
+            drawnCardBox.Image = Properties.Resources.empty_ready;
             // Update layout score
             labelLayoutScore.Text = "Layout score: " + game.LayoutScore;
             // Update total score

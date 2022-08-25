@@ -65,7 +65,7 @@ namespace OregonCardGame.Model
         /// <exception cref="IndexOutOfRangeException">
         /// Thrown if the index is outside the current Layout size.
         /// </exception>
-        internal void ReplaceCard(int idx, Card card)
+        private void ReplaceCard(int idx, Card card)
         {
             // Check that it's in the limits of the MaximumLayoutSize
             if (idx < 0 || idx >= LayoutContents.Count)
@@ -88,7 +88,7 @@ namespace OregonCardGame.Model
         /// <exception cref="InvalidOperationException">
         /// Thrown if the Layout is full when this is called.
         /// </exception>
-        internal void FillLayout(Card card)
+        private void FillLayout(Card card)
         {
             if (Full)
             {
@@ -105,6 +105,34 @@ namespace OregonCardGame.Model
                 sb.Append(card.ToString() + ",");
             }
             return sb.ToString().Remove(sb.Length - 1, 1);
+        }
+
+        /// <summary>
+        /// Puts a card in the layout at the provided index.
+        /// </summary>
+        /// <param name="idx">
+        /// The index for the card to be placed.
+        /// </param>
+        /// <exception cref="InvalidOperationException">
+        /// Thrown if the DrawnCard is null.
+        /// </exception>
+        /// <exception cref="IndexOutOfRangeException">
+        /// Thrown if the index is outside of the current hand size + 1 or over maximum hand size.
+        /// </exception>
+        internal void PlaceCard(int idx, Card card)
+        {
+            if (idx > LayoutCount || idx >= MaximumLayoutSize)
+            {
+                throw new IndexOutOfRangeException("Trying to add card to an invalid index in layout");
+            }
+            if (idx == LayoutCount)
+            {
+                FillLayout(card);
+            }
+            else
+            {
+                ReplaceCard(idx, card);
+            }
         }
     }
 }

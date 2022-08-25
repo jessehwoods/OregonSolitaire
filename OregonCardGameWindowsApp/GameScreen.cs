@@ -28,8 +28,6 @@ namespace OregonCardGameWindowsApp
             PlaceCard(0);
         }
 
-
-
         private void layoutIndex1_Click(object sender, EventArgs e)
         {
             PlaceCard(1);
@@ -67,37 +65,74 @@ namespace OregonCardGameWindowsApp
         /// </summary>
         private void UpdateGameScreen()
         {
-            // Check if game is over
+            // Get the pictures for the layout as a queue
+            var cardsInLayout = new Queue<String>(game.CardsInLayout.Split(','));
+            // Add the images
+            for (int i = 0; i < layoutCards.Count; i++)
+            {
+                if (cardsInLayout.Count >= 2)
+                {
+                    layoutCards[i].Image = GetCardPicture(cardsInLayout.Dequeue(), cardsInLayout.Dequeue());
+                    layoutCards[i].Enabled = true;
+                }
+                else if (i <= game.HighestAvailableIndex)
+                {
+                    layoutCards[i].Image = (Bitmap)Properties.Resources.ResourceManager.GetObject("empty_ready");
+                    layoutCards[i].Enabled = true;
+                }
+                else
+                {
+                    layoutCards[i].Image = null;
+                    layoutCards[i].Enabled = false;
+                }
+            }
+            // Now check if the game is over
             if (game.GameOver)
             {
                 // Finish game
                 EndGame();
             }
-            //Clear the cards in the layout
-            foreach (PictureBox pb in layoutCards)
+            else
             {
-                pb.Image = null;
+                // Game isn't over, so need to deal with the rest.
+                // Get the drawn card
+                var availableCardString = game.AvailableCard.Split(',');
+                drawnCardBox.Image = GetCardPicture(availableCardString[0], availableCardString[1]);
+                // Update layout score
+                labelLayoutScore.Text = Properties.Resources.LayoutScore + game.LayoutScore;
+                // Update total score
+                labelTotalScore.Text = Properties.Resources.TotalScore + game.Score;
+                // Update cards left in deck
+                cardsInDeck.Text = "Cards left in deck: " + game.CardsInDeck;
+                if (game.CardsInDeck <= 0)
+                {
+                    deckBox.Image = null;
+                }
             }
-            // Get the cards in the layout and get the pictures of them
-            string[] cardsInLayout = game.CardsInLayout.Split(',');
-            for(int i = 0; i <= game.HighestAvailableIndex; i++)
-            {
-                layoutCards[i].Image = Properties.Resources.ace_clubs;
-            }
-            // Get the drawn card
-            var availableCardStringArray = game.AvailableCard.Split();
-            drawnCardBox.Image = Properties.Resources.empty_ready;
-            // Update layout score
-            labelLayoutScore.Text = "Layout score: " + game.LayoutScore;
-            // Update total score
-            labelTotalScore.Text = " Total score: " + game.Score;
         }
 
         private void EndGame()
         {
-            throw new NotImplementedException();
+            foreach (PictureBox pb in layoutCards)
+            {
+                pb.Enabled = false;
+            }
+            buttonStartNewLayout.Enabled = false;
+            drawnCardBox.Image = null;
+            labelLayoutScore.Text = null;
+            labelTotalScore.Text = Properties.Resources.TotalScore + game.Score;
         }
 
+        private Bitmap GetCardPicture(string rank, string suit)
+        {
+            Bitmap bitmap = null;
+            bitmap = (Bitmap) Properties.Resources.ResourceManager.GetObject(rank.ToLower() + "_" + suit.ToLower());
+            if (bitmap == null)
+            {
+                bitmap = (Bitmap) Properties.Resources.ResourceManager.GetObject("error");
+            }
+            return bitmap;
+        }
 
     }
 }

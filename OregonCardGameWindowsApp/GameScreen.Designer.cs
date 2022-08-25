@@ -39,6 +39,7 @@
             this.labelLayoutScore = new System.Windows.Forms.Label();
             this.labelTotalScore = new System.Windows.Forms.Label();
             this.buttonStartNewLayout = new System.Windows.Forms.Button();
+            this.cardsInDeck = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.deckBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drawnCardBox)).BeginInit();
@@ -177,12 +178,23 @@
             this.buttonStartNewLayout.UseVisualStyleBackColor = true;
             this.buttonStartNewLayout.Click += new System.EventHandler(this.buttonStartNewLayout_Click);
             // 
+            // cardsInDeck
+            // 
+            this.cardsInDeck.AutoSize = true;
+            this.cardsInDeck.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.cardsInDeck.Location = new System.Drawing.Point(268, 281);
+            this.cardsInDeck.Name = "cardsInDeck";
+            this.cardsInDeck.Size = new System.Drawing.Size(79, 15);
+            this.cardsInDeck.TabIndex = 4;
+            this.cardsInDeck.Text = "Cards in Deck";
+            // 
             // GameScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Green;
             this.ClientSize = new System.Drawing.Size(800, 332);
+            this.Controls.Add(this.cardsInDeck);
             this.Controls.Add(this.buttonStartNewLayout);
             this.Controls.Add(this.labelTotalScore);
             this.Controls.Add(this.labelLayoutScore);
@@ -215,5 +227,6 @@
         private Label labelLayoutScore;
         private Label labelTotalScore;
         private Button buttonStartNewLayout;
+        private Label cardsInDeck;
     }
 }

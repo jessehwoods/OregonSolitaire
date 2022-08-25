@@ -79,6 +79,10 @@
         /// <returns>A card which is removed from the deck.</returns>
         internal Card GetCard()
         {
+            if (cards.Count <= 0)
+            {
+                throw new InvalidOperationException("Trying to draw from an empty deck.");
+            }
             var idx = random.Next(cards.Count); 
             var cardToReturn = cards[idx];
             cards.RemoveAt(idx);

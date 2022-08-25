@@ -56,6 +56,16 @@ namespace OregonCardGame.Controller
         public int HighestAvailableIndex => layout.AvailableIndexes();
 
         /// <summary>
+        /// Gives the highest index that a card in layout can have.
+        /// </summary>
+        public int HighestPossibleIndex => Layout.MaximumLayoutSize - 1;
+
+        /// <summary>
+        /// Gives the highest index that a card has been played to.
+        /// </summary>
+        public int HighestPlayedIndex => layout.LayoutCount - 1;
+
+        /// <summary>
         /// Card that has been taken from deck, but not played to layout yet.
         /// </summary>
         private Card DrawnCard;
@@ -88,17 +98,13 @@ namespace OregonCardGame.Controller
         /// Uses the drawn card to start a new layout.
         /// </summary>
         /// <exception cref="InvalidOperationException">
-        /// Thrown if this is called when there is no drawn card.
+        /// Thrown if this is called when the game is over.
         /// </exception>
         public void StartNewLayout()
         {
             if (GameOver)
             {
                 throw new InvalidOperationException("Cannot start a layout when game is over.");
-            }
-            if (DrawnCard == null)
-            {
-                throw new InvalidOperationException("Cannot start a layout when there is no drawn card.");
             }
             Score += layout.Score;
             layout = new Layout();
@@ -132,7 +138,15 @@ namespace OregonCardGame.Controller
                 throw new ArgumentException("Game is attempting to place a card outside allowed ranged of indexes.");
             }
             layout.PlaceCard(idx, DrawnCard);
-            DrawCard();
+            // See if game needs to end here
+            if (deck.cardsInDeck <= 0)
+            {
+                EndGame();
+            }
+            else
+            {
+                DrawCard();
+            }
         }
 
         /// <summary>
@@ -146,9 +160,12 @@ namespace OregonCardGame.Controller
             }
             if (deck.cardsInDeck == 0)
             {
-                EndGame(); 
+                throw new InvalidOperationException("Cannot draw card when deck is empty.");
             }
-            DrawnCard = deck.GetCard();
+            else
+            {
+                DrawnCard = deck.GetCard();
+            }
         }
 
         /// <summary>

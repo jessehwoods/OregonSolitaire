@@ -144,7 +144,7 @@ namespace OregonCardGame.Model
         /// <returns>
         /// The highest index that can be played in.
         /// </returns>
-        private int AvailableIndexes()
+        internal int AvailableIndexes()
         {
             if (LayoutCount < Layout.MaximumLayoutSize)
             {

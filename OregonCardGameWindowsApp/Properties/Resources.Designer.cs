@@ -163,6 +163,16 @@ namespace OregonCardGameWindowsApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap error {
+            get {
+                object obj = ResourceManager.GetObject("error", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap five_clubs {
             get {
                 object obj = ResourceManager.GetObject("five_clubs", resourceCulture);
@@ -213,6 +223,16 @@ namespace OregonCardGameWindowsApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap four_diamonds {
+            get {
+                object obj = ResourceManager.GetObject("four_diamonds", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap four_hearts {
             get {
                 object obj = ResourceManager.GetObject("four_hearts", resourceCulture);
@@ -226,16 +246,6 @@ namespace OregonCardGameWindowsApp.Properties {
         internal static System.Drawing.Bitmap four_spades {
             get {
                 object obj = ResourceManager.GetObject("four_spades", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap fourdiamonds {
-            get {
-                object obj = ResourceManager.GetObject("fourdiamonds", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -317,6 +327,15 @@ namespace OregonCardGameWindowsApp.Properties {
             get {
                 object obj = ResourceManager.GetObject("king_spades", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Layout score: .
+        /// </summary>
+        internal static string LayoutScore {
+            get {
+                return ResourceManager.GetString("LayoutScore", resourceCulture);
             }
         }
         
@@ -557,6 +576,25 @@ namespace OregonCardGameWindowsApp.Properties {
             get {
                 object obj = ResourceManager.GetObject("three_spades", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap title_screen {
+            get {
+                object obj = ResourceManager.GetObject("title_screen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total score: .
+        /// </summary>
+        internal static string TotalScore {
+            get {
+                return ResourceManager.GetString("TotalScore", resourceCulture);
             }
         }
         

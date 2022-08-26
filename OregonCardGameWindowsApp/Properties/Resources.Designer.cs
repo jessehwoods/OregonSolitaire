@@ -420,7 +420,11 @@ namespace OregonCardGameWindowsApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Oregon is a solitaire card game in which you try to make the best poker hands possible.
+        ///
+        ///
+        ///HOW TO PLAY
+        ///You will have a layout of up to five cards and a card in hand. You can choose to play your card in hand on top of another card in your layout, add a new card to your layout (if there&apos;s less than five) or use it as the first card in a new layout. If your layout contains a poker hand, it will be worth the amount listed below. If you start a new layout, you add the layout score to your total, but if you ch [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string rules_text {
             get {
